@@ -5,16 +5,14 @@
  * @author Jake Zhong
 ----------------------  
 -------------| |   / /
-     | |     | |  / /
-     | |     | | / /
-     | |     | |/ /
-     | |     | |\ \
-     | |     | | \ \
-     | |     | |  \ \
+        | |     | |  / /
+        | |     | | / /
+        | |     | |/ /
+        | |     | |\ \
+        | |     | | \ \
+        | |     | |  \ \
 -----  |     | |   \ \
 -----------------------  
 **/
-/* ========================================================================= */
-
-
-function parallaxObject(a){function t(){o=$(window).width()>r?$(a).data("speed")?$(a).data("speed"):.5:0}function n(a){$(a).each(function(){var a=$(this),t=$("html").scrollTop(),n=$("body").scrollTop(),e=(t>n?t:n)-a.parent().offset().top+s,r=parseInt(e*o);a.css({webkitTransform:"translate3d(0, "+r+"px, 0)",MozTransform:"translate3d(0, "+r+"px, 0)",msTransform:"translateY("+r+"px)",OTransform:"translate3d(0, "+r+"px, 0)",transform:"translate3d(0, "+r+"px, 0)"})})}var o,e,r,s,i;$(window).width(),i=$(window).height(),e=!!$(a).data("resize"),r=$(a).data("breakpoint")?$(a).data("breakpoint"):"",function(a){var t=$(a);s=$(t).data("reset")?$(t).parent().offset().top:0}(a),t(),function(a){var t,n=$(a);1==e&&(t=parseInt(i*o),n.css("height","+="+t))}(a),n(a),$(window).bind("scroll",function(){n(a)}),$(window).bind("resize",function(){t()}),console.log($(a).data("speed"))}jQuery(function(a){a(".parallax-object").each(function(){parallaxObject(a(this))})});
+/* ========================================================================= */	  
+function parallaxObject(t){function a(){r=$(window).width()>e?$(t).data("speed")?$(t).data("speed"):.5:0}function n(t){$(t).each(function(){var t=$(this),a=$("html").scrollTop(),n=$("body").scrollTop(),o=(a>n?a:n)-t.parent().offset().top+s,e=parseInt(o*r);t.css({webkitTransform:"translate3d(0, "+e+"px, 0)",MozTransform:"translate3d(0, "+e+"px, 0)",msTransform:"translateY("+e+"px)",OTransform:"translate3d(0, "+e+"px, 0)",transform:"translate3d(0, "+e+"px, 0)"})})}var r,o,e,s,i;$(window).width(),i=$(window).height(),o=!!$(t).data("resize"),e=$(t).data("breakpoint")?$(t).data("breakpoint"):"",function(t){var a=$(t);s=$(a).data("reset")?$(a).parent().offset().top:0}(t),a(),function(t){var a,n=$(t);1==o&&(a=parseInt(i*r),n.css("height","+="+a))}(t),n(t),$(window).bind("scroll",function(){n(t)}),$(window).bind("resize",function(){a()})}
