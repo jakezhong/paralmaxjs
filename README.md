@@ -11,6 +11,7 @@ Paralmax is a JQuery responsive parallax plugin for multiple uses, including ful
 <script src="js/paramax.js" type="text/javascript"></script>
 ```
 
+
 ### Set up Codes
 
 #### HTML Code
@@ -37,6 +38,7 @@ jQuery(function($){
 ```
 
 No built-in CSS is used/necessary, just style your elements to however you like before you parallax them.
+
 
 ### HTML Data Options
 
