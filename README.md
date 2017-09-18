@@ -62,7 +62,7 @@ Disable paralalx effect while below the specific screen size.
 <div data-breakpoint="768"></div>
 ```
 
-### License
+## License
 
 Copyright 2017 Jake Zhong
 
