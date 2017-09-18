@@ -5,14 +5,14 @@
  * @author Jake Zhong
 ----------------------  
 -------------| |   / /
-        | |     | |  / /
-        | |     | | / /
-        | |     | |/ /
-        | |     | |\ \
-        | |     | | \ \
-        | |     | |  \ \
+     | |     | |  / /
+     | |     | | / /
+     | |     | |/ /
+     | |     | |\ \
+     | |     | | \ \
+     | |     | |  \ \
 -----  |     | |   \ \
------------------------  
+-----------------------
 **/
 /* ========================================================================= */	  
 function parallaxObject(t){function a(){r=$(window).width()>e?$(t).data("speed")?$(t).data("speed"):.5:0}function n(t){$(t).each(function(){var t=$(this),a=$("html").scrollTop(),n=$("body").scrollTop(),o=(a>n?a:n)-t.parent().offset().top+s,e=parseInt(o*r);t.css({webkitTransform:"translate3d(0, "+e+"px, 0)",MozTransform:"translate3d(0, "+e+"px, 0)",msTransform:"translateY("+e+"px)",OTransform:"translate3d(0, "+e+"px, 0)",transform:"translate3d(0, "+e+"px, 0)"})})}var r,o,e,s,i;$(window).width(),i=$(window).height(),o=!!$(t).data("resize"),e=$(t).data("breakpoint")?$(t).data("breakpoint"):"",function(t){var a=$(t);s=$(a).data("reset")?$(a).parent().offset().top:0}(t),a(),function(t){var a,n=$(t);1==o&&(a=parseInt(i*r),n.css("height","+="+a))}(t),n(t),$(window).bind("scroll",function(){n(t)}),$(window).bind("resize",function(){a()})}
