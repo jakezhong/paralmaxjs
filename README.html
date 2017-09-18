@@ -1,0 +1,44 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="paralmax-js">Paralmax.js</h1>
+<p>A parallax effect plugin that can ensure the background size covers the whole container without causing any white space around and it is also responsive for any devices.</p>
+<h3 id="link-to-files">Link to Files</h3>
+<pre><code class="lang-html">&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/paramax.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="set-up-codes">Set up Codes</h3>
+<h4 id="html-code">HTML Code</h4>
+<p>Simply add class .parallax-object to the elements that you want to parallax.</p>
+<pre><code class="lang-html">&lt;div class=&quot;parallax-object&quot;&gt;
+    &lt;img src=&quot;images/2.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="jquery-call">JQuery Call</h4>
+<pre><code class="lang-javascript">jQuery(function($){
+
+    // PARALLAX FUNCTIN CALL
+    $(&quot;.parallax-object&quot;).each(function() {
+        parallaxObject($(this));
+    });
+
+});
+</code></pre>
+<p>No built-in CSS is used/necessary, just style your elements to however you like before you parallax them.</p>
+<h3 id="html-data-options">HTML Data Options</h3>
+<h4 id="speed-float-from-0-x-to-x-0-">Speed ( float, from 0.x to x.0 )</h4>
+<p>0 means the parallax element will be fixed in place, in this case, you don&#39;t need Paralmax. 1 means the same speed as page scoll, x.0 Means x times of the page scrolling speed. Default is 0.5.</p>
+<h4 id="resize-boolean-true-or-false-">Resize ( boolean, true or false )</h4>
+<p>Resize ( boolean, true or false )</p>
+<pre><code class="lang-html">&lt;div data-resize=&quot;true&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h4 id="breakpoint-boolean-true-or-false-">Breakpoint ( boolean, true or false )</h4>
+<p>Disable paralalx effect while below the specific screen size.</p>
+<pre><code class="lang-html">&lt;div data-breakpoint=&quot;768&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+      </body>
+    </html>
