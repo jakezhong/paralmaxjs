@@ -1,8 +1,7 @@
 Paralmax.js
 ===========
 
-A parallax effect plugin that can ensure the background size covers the whole container without causing any white space around and it is also responsive for any devices.
-
+Paralmax is a JQuery responsive parallax plugin for multiple uses, including full size section background image, page parallax elements and more based on different use cases. With many built-in settings, users can set parallax speed, background image to full size or not, disable it below specific screen size and reset element to the top of it's parent container. The advantage of Paralmax is that it only adds parallax effet to elements, but not changes their style/looking, so users can easily customise/style any elements with pure HTML or CSS (position, size, image, background, content, etc).
 
 ### Link to Files
 
