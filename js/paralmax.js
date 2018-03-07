@@ -39,7 +39,8 @@ jQuery.fn.extend({
             initSpeed();
             resizeIt();
             parallaxIt();
-
+            resetIt();
+            
             $(window).bind("scroll",function() {
                 parallaxIt();
             });
@@ -47,6 +48,7 @@ jQuery.fn.extend({
             $(window).bind("resize", function() {
                 initSpeed();
                 resizeIt();
+                resetIt();
             });
 
             function initSpeed() {
@@ -93,6 +95,19 @@ jQuery.fn.extend({
                     'OTransform'      : 'translate3d(0, ' + scrollPosition + 'px, 0)',
                     'transform'       : 'translate3d(0, ' + scrollPosition + 'px, 0)',
                 });
+            }
+            
+            function resetIt() {
+                if( $(window).width() < defaults.breakpoint ) {
+                    var self = object;
+                    self.css({
+                        'webkitTransform' : 'translate3d(0, 0, 0)',
+                        'MozTransform'    : 'translate3d(0, 0, 0)',
+                        'msTransform'     : 'translateY(0)',
+                        'OTransform'      : 'translate3d(0, 0, 0)',
+                        'transform'       : 'translate3d(0, 0, 0)',
+                    });
+                }
             }
         });
     }
