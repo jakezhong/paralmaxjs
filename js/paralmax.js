@@ -1,5 +1,5 @@
 /* ========================================================================= */
-/* http://www.jksakura.com/paralmax */
+/* http://www.jakezhong.com/paralmax */
 /**
  * Paralmax is a JQuery responsive parallax plugin for multiple uses, including full size section background image, page parallax elements and more based on different use cases. With many built-in settings, users can set parallax speed, resize background image to full size or not, disable it below specific screen size, offset of the parallax element from it's center. The advantage of Paralmax is that it only adds parallax effet to elements, but not changes their style/looking, so users can easily customise/style any elements with pure HTML or CSS (position, size, image, background, content, etc).
  * @author Jake Zhong
@@ -17,32 +17,37 @@
 /* ========================================================================= */	  
 jQuery.fn.extend({
     paralmax: function() {
-        var target = $(this);
+        var target = this;
         var windowWidth, windowHeight;
         windowWidth = $(window).width();
         windowHeight = $(window).height();
 
-        return target.each(function(){
-            var object = $(this);
+        return $(target).each(function(){
+            var object = this;
             var offset;
-            offset = object.offset();
+            offset = $(object).offset();
 
             var defaults = {
                 'start': offset.top,
-                'stop': offset.top + object.outerHeight(),
+                'stop': offset.top + $(object).outerHeight(),
                 'speed': 0,
-                'resizable': object.data("resize") ? object.data("resize") : false,
-                'breakpoint': object.data("breakpoint") ? object.data("breakpoint") : 0,
-                'offset': object.data("offset") ? object.data("offset")*object.outerHeight() : 0,
+                'resizable': $(object).data("resize") ? $(object).data("resize") : false,
+                'breakpoint': $(object).data("breakpoint") ? $(object).data("breakpoint") : 0,
+                'offset': $(object).data("offset") ? $(object).data("offset")*$(object).outerHeight() : 0,
             }
 
             initSpeed();
             resizeIt();
-            parallaxIt();
             resetIt();
             
-            $(window).bind("scroll",function() {
+            if( ableIt() ) {
                 parallaxIt();
+            }
+            
+            $(window).bind("scroll",function() {
+                if( ableIt() ) {
+                    parallaxIt();
+                }
             });
 
             $(window).bind("resize", function() {
@@ -52,9 +57,9 @@ jQuery.fn.extend({
             });
 
             function initSpeed() {
-                if( $(window).width() > defaults.breakpoint ) {
-                    if( object.data("speed") || object.data("speed") === 0 ) {
-                        defaults.speed = object.data("speed");
+                if( ableIt() ) {
+                    if( $(object).data("speed") || $(object).data("speed") === 0 ) {
+                        defaults.speed = $(object).data("speed");
                     } else {
                         defaults.speed = 0.5;
                     }
@@ -72,10 +77,10 @@ jQuery.fn.extend({
                     if( $(window).width() > defaults.breakpoint ) {
                         normalHeight = parseInt($(self).parent().outerHeight());
                         extraHeight = (parseInt($(self).parent().offset().top) > parseInt(windowHeight)) ? parseInt(windowHeight * defaults.speed) : parseInt($(self).parent().offset().top) * defaults.speed;
-
-                        self.css( "height", normalHeight + extraHeight);
+                        
+                        $(self).height(normalHeight + extraHeight);
                     } else {
-                        self.css( "height", normalHeight);
+                        $(self).height(normalHeight);
                     }
                 }
             }
@@ -88,7 +93,7 @@ jQuery.fn.extend({
                 var position = n - defaults.start;
                 var scrollPosition = parseInt( position * defaults.speed ) + defaults.offset;
                 // ADD TRANSLATE OFFSET TO OBJECT
-                self.css({
+                $(self).css({
                     'webkitTransform' : 'translate3d(0, ' + scrollPosition + 'px, 0)',
                     'MozTransform'    : 'translate3d(0, ' + scrollPosition + 'px, 0)',
                     'msTransform'     : 'translateY('     + scrollPosition + 'px)',
@@ -98,15 +103,23 @@ jQuery.fn.extend({
             }
             
             function resetIt() {
-                if( $(window).width() < defaults.breakpoint ) {
+                if( !ableIt() ) {
                     var self = object;
-                    self.css({
+                    $(self).css({
                         'webkitTransform' : 'translate3d(0, 0, 0)',
                         'MozTransform'    : 'translate3d(0, 0, 0)',
                         'msTransform'     : 'translateY(0)',
                         'OTransform'      : 'translate3d(0, 0, 0)',
                         'transform'       : 'translate3d(0, 0, 0)',
                     });
+                }
+            }
+            
+            function ableIt() {
+                if( $(window).width() > defaults.breakpoint ) {
+                    return true;
+                } else {
+                    return false;
                 }
             }
         });
