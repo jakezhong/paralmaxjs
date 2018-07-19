@@ -27,13 +27,11 @@ Simply add class .parallax-object to the elements that you want to parallax.
 
 ```javascript
 jQuery(function($){
-
-    // PARALLAX FUNCTIN CALL
-    $(".parallax-object").each(function() {
-        parallaxObject($(this));
+    $(window).on('load', function() {
+            // PARALLAX FUNCTIN CALL
+            $(".parallax-object").paralmax();
+        });
     });
-
-});
 ```
 
 No built-in CSS is used/necessary, just style your elements to however you like before you parallax them.
@@ -75,7 +73,7 @@ Disable paralalx effect while below the specific screen size.
 
 ## License
 
-Copyright 2017 Jake Zhong
+Copyright 2018 Jake Zhong
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
