@@ -28,10 +28,10 @@ Simply add class .parallax-object to the elements that you want to parallax.
 ```javascript
 jQuery(function($){
     $(window).on('load', function() {
-            // PARALLAX FUNCTIN CALL
-            $(".parallax-object").paralmax();
-        });
+        // PARALLAX FUNCTIN CALL
+        $(".parallax-object").paralmax();
     });
+});
 ```
 
 No built-in CSS is used/necessary, just style your elements to however you like before you parallax them.
