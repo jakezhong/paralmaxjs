@@ -45,12 +45,24 @@ No built-in CSS is used/necessary, just style your elements to however you like 
 
 0 means the parallax element will be fixed in place, in this case, you don't need Paralmax. 1 means the same speed as page scoll, x.0 Means x times of the page scrolling speed. Default is 0.5.
 
+```html
+<div data-speed="0.5"></div>
+```
+
 #### Resize ( boolean, true or false )
 
-Resize ( boolean, true or false )
+Resize the image to cover the whole parallax area, usually used for full-size background image that has smaller size than the container.
 
 ```html
 <div data-resize="true"></div>
+```
+
+#### Offset ( float, from 0 to 1 )
+
+0 means the parallax element will not have any offset from it's top, 1 means the parallax element will be posited to it's bottom when it starts, default is 0.
+
+```html
+<div data-offset="0.5"></div>
 ```
 
 #### Breakpoint ( boolean, true or false )
